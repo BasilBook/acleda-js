@@ -1,0 +1,40 @@
+{
+  "name": "@basilbook/acleda",
+  "version": "0.1.0",
+  "description": "ACLEDA ToanChet Pay (XPAY) for Node: open a KHQR payment (as a string or an image), check it, refund, and the hash ACLEDA checks. No framework.",
+  "license": "MIT",
+  "author": "BasilBook",
+  "keywords": ["acleda", "acleda-bank", "toanchet", "xpay", "khqr", "cambodia", "payments"],
+  "sideEffects": false,
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": { "types": "./dist/esm/index.d.ts", "default": "./dist/esm/index.js" },
+      "require": { "types": "./dist/cjs/index.d.ts", "default": "./dist/cjs/index.js" }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md", "CHANGELOG.md", "LICENSE"],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "node ../build-dual.mjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "prepublishOnly": "node ../build-dual.mjs"
+  },
+  "dependencies": {
+    "@basilbook/khqr": "workspace:^"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
+  }
+}
