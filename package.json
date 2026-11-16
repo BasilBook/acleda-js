@@ -4,6 +4,9 @@
   "description": "ACLEDA ToanChet Pay (XPAY) for Node: open a KHQR payment (as a string or an image), check it, refund, and the hash ACLEDA checks. No framework.",
   "license": "MIT",
   "author": "BasilBook",
+  "repository": { "type": "git", "url": "git+https://github.com/basilbook/acleda-js.git" },
+  "bugs": { "url": "https://github.com/basilbook/acleda-js/issues" },
+  "homepage": "https://github.com/basilbook/acleda-js",
   "keywords": ["acleda", "acleda-bank", "toanchet", "xpay", "khqr", "cambodia", "payments"],
   "sideEffects": false,
   "main": "./dist/cjs/index.js",
@@ -24,10 +27,10 @@
     "access": "public"
   },
   "scripts": {
-    "build": "node ../build-dual.mjs",
+    "build": "node build-dual.mjs",
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run",
-    "prepublishOnly": "node ../build-dual.mjs"
+    "prepublishOnly": "node build-dual.mjs"
   },
   "dependencies": {
     "@basilbook/khqr": "workspace:^"
